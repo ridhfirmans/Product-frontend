@@ -1,0 +1,77 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Form Product</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Form Product</h3>
+				<br/>
+				<div class="col-md-10">
+					<!-- save alert -->
+					<div th:if="${saveProduct eq 'unsuccess'}">
+						<div class="alert alert-danger alert-dismissible" role="alert">
+							<strong>Error !</strong> Gagal Menyimpan Data Form Product.
+						</div>
+					</div>
+					
+					
+					<form action="#" class="form-horizontal" 
+					th:action="@{/product/form-product}" th:object="${product}" 
+					method="post">
+					
+					<input type="hidden" th:field="*{id}" />
+					<br/>
+					<div class="form-group">
+						<label class="control-label col-sm-2">Nama Product</label>			
+						<div class="col-sm-5">
+							<input id="txtNama" name="txtNama" type="text" th:field="*{namaProduct}"
+								class="form-control" placeholder="Nama Product" />
+						</div>
+						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('namaProduct')}" th:errors="*{namaProduct}">Pesan Error</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Harga</label>			
+						<div class="col-sm-5">
+							<input id="txtHarga" name="txtHarga" type="text" th:field="*{harga}"
+								class="form-control" placeholder="Harga" />
+						</div>
+						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('harga')}" th:errors="*{harga}">Pesan Error</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Stok</label>			
+						<div class="col-sm-5">
+							<input id="txtStok" name="txtStok" type="text" th:field="*{stok}"
+								class="form-control" placeholder="Stok" />
+						</div>
+						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('stok')}" th:errors="*{stok}">Pesan Error</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2">Minimum Stok</label>			
+						<div class="col-sm-5">
+							<input id="txtMinumumStok" name="txtMinumumStok" type="text" th:field="*{minimumStok}"
+								class="form-control" placeholder="Minimum Stok" />
+						</div>
+						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('minimumStok')}" th:errors="*{minimumStok}">Pesan Error</div>
+					</div>
+	
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-8">
+							<button type="submit" class="btn btn-primary">Simpan</button>
+						</div>
+					</div>		
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

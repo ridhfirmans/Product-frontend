@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Master Product</h1>
+				<br/>
+				<a th:href="@{/logout}" class="btn btn-info btn-md"> 
+					Logout
+				</a>
+				<br/><br/>		
+			</div>
+			
+			<div class="col-md-7">
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>Nama Product</th>
+							<th>Harga</th>
+							<th>Jumlah Stok</th>
+							<th>Minimum Stok</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="dp : ${dataProduct}">
+							<td th:text="${dp.namaProduct}"></td>
+							<td th:text="${dp.harga}"></td>
+							<td th:text="${dp.stok}"></td>
+							<td th:text="${dp.minimumStok}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-12">
+				<br/>
+				<a th:href="@{/product/form-product}" class="btn btn-info btn-md"> 
+					<span class="glyphicon glyphicon-plus"></span> 
+					Tambah Product
+				</a>
+				<a th:href="@{/sendEmail}" class="btn btn-info btn-md"> 
+					Cek Stok
+				</a>
+				
+				<br/><br/>		
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
