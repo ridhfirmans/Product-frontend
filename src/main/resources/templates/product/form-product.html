@@ -30,7 +30,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2">Nama Product</label>			
 						<div class="col-sm-5">
-							<input id="txtNama" name="txtNama" type="text" th:field="*{namaProduct}"
+							<input id="namaProduct" name="namaProduct" type="text" th:field="*{namaProduct}"
 								class="form-control" placeholder="Nama Product" />
 						</div>
 						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('namaProduct')}" th:errors="*{namaProduct}">Pesan Error</div>
@@ -39,7 +39,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2">Harga</label>			
 						<div class="col-sm-5">
-							<input id="txtHarga" name="txtHarga" type="text" th:field="*{harga}"
+							<input id="harga" name="harga" type="text" th:field="*{harga}"
 								class="form-control" placeholder="Harga" />
 						</div>
 						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('harga')}" th:errors="*{harga}">Pesan Error</div>
@@ -48,7 +48,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2">Stok</label>			
 						<div class="col-sm-5">
-							<input id="txtStok" name="txtStok" type="text" th:field="*{stok}"
+							<input id="stok" name="stok" type="text" th:field="*{stok}"
 								class="form-control" placeholder="Stok" />
 						</div>
 						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('stok')}" th:errors="*{stok}">Pesan Error</div>
@@ -57,7 +57,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2">Minimum Stok</label>			
 						<div class="col-sm-5">
-							<input id="txtMinumumStok" name="txtMinumumStok" type="text" th:field="*{minimumStok}"
+							<input id="minimumStok" name="minimumStok" type="text" th:field="*{minimumStok}"
 								class="form-control" placeholder="Minimum Stok" />
 						</div>
 						<div style="background-color:#FFB2B2" th:if="${#fields.hasErrors('minimumStok')}" th:errors="*{minimumStok}">Pesan Error</div>

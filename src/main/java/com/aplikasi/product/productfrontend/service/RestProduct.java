@@ -44,7 +44,9 @@ public class RestProduct {
 		}
 	}
 
-	public Product findProductById(int id) {
+	public Product findProductById(Integer id) {
+		LOGGER.info("ini idnya di restservice >> "+id);
+		LOGGER.info("isinya paan: "+restTemplate.getForObject(backendUrl+pathProduct+"/"+id, Product.class));
 		return restTemplate.getForObject(backendUrl + pathProduct + "/" + id, Product.class);
 	}
 

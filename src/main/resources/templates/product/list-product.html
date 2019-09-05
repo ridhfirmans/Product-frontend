@@ -26,14 +26,20 @@
 							<th>Harga</th>
 							<th>Jumlah Stok</th>
 							<th>Minimum Stok</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="dp : ${dataProduct}">
-							<td th:text="${dp.namaProduct}"></td>
-							<td th:text="${dp.harga}"></td>
-							<td th:text="${dp.stok}"></td>
-							<td th:text="${dp.minimumStok}"></td>
+						<tr th:each="prod : ${dataProduct}">
+							<td th:text="${prod.namaProduct}"></td>
+							<td th:text="${prod.harga}"></td>
+							<td th:text="${prod.stok}"></td>
+							<td th:text="${prod.minimumStok}"></td>
+							<td>
+								<a th:href="@{/product/form-product(id=${prod.id})}">
+									 <span class="glyphicon glyphicon-edit"></span>
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>

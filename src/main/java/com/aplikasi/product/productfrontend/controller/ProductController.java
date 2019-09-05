@@ -64,10 +64,11 @@ public class ProductController {
 	}
 
 	@GetMapping("/product/form-product")
-	public ModelMap findById(@RequestParam(name = "id", required = false) String id) {
+	public ModelMap findProductById(@RequestParam(name = "id", required = false) Integer id) {
+		LOGGER.info("id: "+id);
 		Product prod = new Product();
 		if (id != null) {
-			prod = restProduct.findProductById(prod.getId());
+			prod = restProduct.findProductById(id);
 			if (prod == null) {
 				prod = new Product();
 			}
@@ -88,7 +89,7 @@ public class ProductController {
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "redirect:/";
+		return "redirect:/login?logout";
 	}
 
 }
